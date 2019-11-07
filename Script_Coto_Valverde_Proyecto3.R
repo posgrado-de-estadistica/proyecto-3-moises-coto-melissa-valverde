@@ -153,7 +153,6 @@ plot(r.sv1 <- sample.variogram(residuals(r.lm1), locations=data.sp@data[, c("Lat
 lines(r.sv.spher <- fit.variogram.model(r.sv1, variogram.mode="RMexp",
                                         param=c(variance=4, nugget=0.05, scale=40)),col="red")
 
-fit.variogram(v, vgm(c("Exp", "Mat", "Sph")))
 
 plot(variogram(log(Profundidad_km)~1,data=data.sp,  width=1,alpha = c(0, 45, 90, 135)))
 
@@ -193,7 +192,6 @@ plot(r.sv1 <- sample.variogram(residuals(r.lm1), locations=data.sp@data[, c("Lat
 lines(r.sv.spher <- fit.variogram.model(r.sv1, variogram.mode="RMspheric",
                                         param=c(variance=0.7, nugget=0.05, scale=2)),col="red")
 
-fit.variogram(v, vgm(c("Exp", "Mat", "Sph","Gau")))
 
 plot(variogram(log(Profundidad_km)~1,data=data.sp,  width=1,alpha = c(0, 45, 90, 135)))
 
@@ -226,7 +224,6 @@ op <- par(mfrow=c(2, 2)); plot(r.lm2); par(op)
 v <- variogram(log(Magnitud_Mw)~log(Acelaracion_cms2),data=data.sp, width=1)
 plot(v)
 
-fit.variogram(v, vgm(c("Exp", "Mat", "Sph","Gau")))
 
 plot(r.sv2 <- sample.variogram(residuals(r.lm2), locations=data.sp@data[, c("Lat","Lon")],
                                lag.dist.def=0.5, max.lag=10,
